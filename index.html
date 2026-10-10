@@ -1,103 +1,437 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr"> 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Betül 🤍</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#fff0f4;--ink:#3b0f26;--acc:#e11d62;--acc2:#ff7aa2;--glass:#ffffff88;--b1:#ff9ec0;--b2:#ffc6a8;--b3:#d6a4ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14040e;--ink:#ffe3ee;--acc:#ff4d8d;--acc2:#ffa3c2;--glass:#ffffff12;--b1:#c2185b;--b2:#7b1fa2;--b3:#ff5722}}
-:root[data-theme="dark"]{--bg:#14040e;--ink:#ffe3ee;--acc:#ff4d8d;--acc2:#ffa3c2;--glass:#ffffff12;--b1:#c2185b;--b2:#7b1fa2;--b3:#ff5722}
-*{box-sizing:border-box;margin:0}
-html,body{overflow-x:hidden;background:var(--bg)}
-body{color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
-.aur{position:fixed;inset:0;z-index:0;overflow:hidden}
-.aur i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(90px);opacity:.55;animation:drift 18s ease-in-out infinite alternate}
-.aur i:nth-child(1){background:var(--b1);left:-15vmax;top:-10vmax}
-.aur i:nth-child(2){background:var(--b2);right:-20vmax;top:20vmax;animation-delay:-6s}
-.aur i:nth-child(3){background:var(--b3);left:10vmax;bottom:-25vmax;animation-delay:-11s}
-@keyframes drift{to{transform:translate(8vmax,-6vmax) scale(1.25)}}
-canvas{position:fixed;inset:0;z-index:1;pointer-events:none}
-section{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 20px;position:relative;z-index:3}
-.heart{width:min(52vw,230px);position:relative;transition:transform .15s;margin-bottom:6px}
-.heart svg{width:100%;display:block;animation:beat 1.4s infinite;filter:drop-shadow(0 0 28px #ff2d78aa)}
-.heart:before,.heart:after{content:"";position:absolute;inset:8%;border-radius:50%;border:2px solid var(--acc);animation:ring 2.8s infinite;opacity:0}
-.heart:after{animation-delay:1.4s}
-@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.14)}30%{transform:scale(1)}45%{transform:scale(1.09)}}
-@keyframes ring{0%{transform:scale(.6);opacity:.7}100%{transform:scale(2.4);opacity:0}}
-h1{font-family:Fraunces,Georgia,serif;font-style:italic;font-size:clamp(4.2rem,21vw,8.5rem);line-height:1.05;background:linear-gradient(100deg,var(--acc),#ffd1e1,var(--acc),var(--acc2));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite;filter:drop-shadow(0 6px 26px #ff4d8d66)}
-@keyframes shine{to{background-position:-250% 0}}
-.hint{margin-top:14px;opacity:.75;animation:pulse 2s infinite;letter-spacing:.08em}
-@keyframes pulse{50%{opacity:.25}}
-.pop{position:fixed;pointer-events:none;z-index:2;font-weight:600;white-space:nowrap;color:var(--acc);text-shadow:0 0 18px #ff4d8d88;animation:pop 3s ease-out forwards}
-@keyframes pop{0%{transform:translate(-50%,-50%) scale(0) rotate(var(--r));opacity:0}12%{transform:translate(-50%,-50%) scale(1.25) rotate(var(--r));opacity:1}25%{transform:translate(-50%,-50%) scale(1) rotate(var(--r))}100%{transform:translate(-50%,-100%) scale(1) rotate(var(--r));opacity:0}}
-.card{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid #ffffff55;border-radius:32px;padding:46px 26px 40px;width:min(92vw,520px);box-shadow:0 20px 70px #e11d6244}
-h2{font-family:Fraunces,Georgia,serif;font-style:italic;font-size:clamp(2rem,8vw,3rem);margin-bottom:30px}
-.row{display:flex;gap:16px;align-items:center;justify-content:center;min-height:74px}
-button{border:0;border-radius:99px;padding:16px 38px;font:inherit;font-weight:600;font-size:1.1rem;color:#fff;cursor:pointer;transition:transform .2s}
-#y{background:linear-gradient(90deg,var(--acc),var(--acc2));box-shadow:0 10px 34px #e11d6277;animation:glow 1.6s infinite}
-@keyframes glow{50%{box-shadow:0 10px 50px #ff4d8dcc}}
-#n{background:#6b7280;touch-action:none}
-#ans{margin-top:26px;font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.9rem;min-height:2.6em}
-.sg{font-size:1.3rem;opacity:.85;display:block;margin-top:6px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yusuf İslam Yılmaz kişisel tanıtım sayfası">
+  <title>Yusuf İslam Yılmaz | Kişisel Tanıtım Sayfası</title>
+  
+  <!-- ===== YAZI TİPLERİ: internet yoksa sistem fontları kullanılır ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===== CSS: renkler, yazılar ve yerleşim ===== -->
+  <style>
+    /* --- Renk değişkenleri (açık tema) --- */
+    :root {
+      --bg: #f2f2ef;
+      --ink: #1c1c1c;
+      --muted: #666660;
+      --line: #cfcfc8;
+      --accent: #b3202a;
+      --panel: #b3202a;
+      --panel-ink: #ffffff;
+    }
+
+    /* Koyu tema: JavaScript html etiketine data-theme="dark" ekleyince bu renkler geçerli olur */
+    :root[data-theme="dark"] {
+      --bg: #141414;
+      --ink: #ececea;
+      --muted: #a0a09a;
+      --line: #333330;
+      --accent: #ff6b6f;
+      --panel: #7d151c;
+    }
+
+    /* --- Genel ayarlar --- */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    /* Sayfa iki sütunlu grid: solda 340px'lik panel, sağda içerik */
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Hanken Grotesk", system-ui, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      min-height: 100vh;
+      transition: background .3s, color .3s;
+    }
+
+    h1, h2, h3 {
+      font-family: "Bricolage Grotesque", system-ui, "Segoe UI", sans-serif;
+      line-height: 1.1;
+      margin: 0;
+    }
+    h1 { font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -0.02em; }
+    h2 { font-size: 2rem; margin-bottom: 20px; }
+    p { max-width: 62ch; margin: 0 0 14px; }
+    strong { color: var(--accent); font-weight: 600; }
+    em { color: var(--muted); }
+
+    /* --- Sol panel: kaydırınca ekranda sabit kalır, hem içerik hem alt bilgi satırını kaplar --- */
+    aside {
+      background: var(--panel);
+      color: var(--panel-ink);
+      grid-row: 1 / span 2;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    #selam { margin: 0 0 12px; opacity: .85; }
+    .alt { margin: 16px 0 0; max-width: 26ch; opacity: .9; min-height: 3.4em; } /* min-height: yazı değişirken sayfa zıplamasın */
+
+    nav { display: flex; flex-direction: column; gap: 8px; margin-top: 32px; }
+    nav a {
+      color: var(--panel-ink);
+      text-decoration: none;
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+      width: fit-content;
+      opacity: .75;
+    }
+    nav a:hover, nav a:focus-visible, nav a.aktif { opacity: 1; border-bottom-color: var(--panel-ink); }
+
+    #tema {
+      background: transparent;
+      color: var(--panel-ink);
+      border: 1px solid var(--panel-ink);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font: inherit;
+      cursor: pointer;
+      width: fit-content;
+    }
+    #tema:hover, #tema:focus-visible { background: var(--panel-ink); color: var(--panel); }
+
+    /* Yazı makinesi imleci */
+    .imlec {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: currentColor;
+      margin-left: 3px;
+      vertical-align: -0.12em;
+      animation: yanip 1s steps(1) infinite;
+    }
+    @keyframes yanip { 50% { opacity: 0; } }
+
+    /* --- İçerik alanı --- */
+    main { grid-column: 2; grid-row: 1; padding: 64px clamp(24px, 6vw, 80px); max-width: 880px; }
+    section { padding: 0 0 48px; margin-bottom: 48px; border-bottom: 1px solid var(--line); }
+    section:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+    /* İlgi alanları: iki sütunlu sırasız liste */
+    ul.ilgi { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 40px; }
+    ul.ilgi li { padding: 10px 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+
+    /* Eğitim: sıralı liste, solda yıl sağda okul bilgisi */
+    ol.egitim { list-style: none; padding: 0; margin: 0; }
+    ol.egitim li {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    ol.egitim .yil { color: var(--accent); font-weight: 600; }
+    ol.egitim h3 { font-size: 1.15rem; }
+    ol.egitim p { margin: 4px 0 0; color: var(--muted); }
+
+    /* İletişim: etiket, bağlantı ve düğme için üç sütun */
+    ul.iletisim { list-style: none; padding: 0; margin: 0; }
+    ul.iletisim li {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    ul.iletisim .etiket { color: var(--muted); }
+    ul.iletisim a { color: var(--ink); overflow-wrap: anywhere; }
+    ul.iletisim a:hover, ul.iletisim a:focus-visible { color: var(--accent); }
+
+    #kopyala {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font: inherit;
+      cursor: pointer;
+    }
+    #kopyala:hover, #kopyala:focus-visible { border-color: var(--accent); color: var(--accent); }
+
+    footer {
+      grid-column: 2;
+      grid-row: 2;
+      text-align: center;
+      color: var(--muted);
+      padding: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* --- JavaScript ile çalışan öğeler: ilerleme çubuğu ve yukarı çık düğmesi --- */
+    #ilerleme {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--ink);
+      transform: scaleX(0);
+      transform-origin: left;
+      z-index: 20;
+    }
+    #yukari {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-size: 1.3rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+      z-index: 20;
+    }
+    #yukari.gorunur { opacity: 1; pointer-events: auto; }
+
+    /* --- Telefon ve küçük ekranlar: tek sütun --- */
+    @media (max-width: 800px) {
+      body { grid-template-columns: 1fr; }
+      aside { grid-row: auto; position: static; height: auto; gap: 32px; }
+      main, footer { grid-column: 1; grid-row: auto; }
+      ul.ilgi { columns: 1; }
+      ol.egitim li { grid-template-columns: 1fr; gap: 2px; }
+      ul.iletisim li { grid-template-columns: 1fr; gap: 4px; justify-items: start; }
+    }
+
+    /* Hareketi azaltmak isteyen kullanıcılar için animasyonlar kapatılır */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      body { transition: none; }
+    }
+  </style>
 </head>
 <body>
-<div class="aur"><i></i><i></i><i></i></div>
-<canvas id="c"></canvas>
 
-<section>
-  <div class="heart" id="hr"><svg viewBox="0 0 100 90"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8fb8"/><stop offset=".55" stop-color="#ff2d78"/><stop offset="1" stop-color="#b0124e"/></linearGradient></defs><path fill="url(#g)" d="M50 86C10 56 0 36 0 22 0 9 11 0 24 0c11 0 20 6 26 15C56 6 65 0 76 0c13 0 24 9 24 22 0 14-10 34-50 64z"/><path fill="#fff" opacity=".35" d="M16 14c4-5 11-7 16-3-7-1-12 2-14 8-1 2-3-1-2-5z"/></svg></div>
-  <h1>Betül</h1>
-  <p class="hint">bi dokun 🤍</p>
-</section>
+  <div id="ilerleme" aria-hidden="true"></div>
 
-<section>
-  <div class="card">
-    <h2>Benimle kalır mısın?</h2>
-    <div class="row"><button id="y">Evet 💖</button><button id="n">Hayır</button></div>
-    <div id="ans"></div>
-  </div>
-</section>
+  <!-- ===== SOL PANEL: selam, ana başlık, menü ve tema düğmesi ===== -->
+  <aside>
+    <div>
+      <p id="selam">Merhaba, ben</p>
+      <h1>Yusuf İslam Yılmaz</h1>
+      <p class="alt"><span id="rol">Bilgisayar programcılığı öğrencisi</span><span class="imlec" aria-hidden="true"></span></p>
+      <nav aria-label="Sayfa menüsü">
+        <a href="#hakkimda">Hakkımda</a>
+        <a href="#ilgi">İlgi Alanlarım</a>
+        <a href="#egitim">Eğitim</a>
+        <a href="#deneyim">Staj ve Gönüllülük</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+    </div>
+    <button id="tema" type="button" aria-label="Açık ve koyu tema arasında geçiş yap">Koyu tema</button>
+  </aside>
 
-<script>
-var L=["Seni seviyorum","I love you","Je t'aime","Te amo","Ti amo","Ich liebe dich","愛してる","사랑해","我爱你","Я тебя люблю","أحبك","Σ'αγαπώ","Ik hou van je","Kocham cię","Te iubesc","Volim te","Szeretlek","Rakastan sinua","Mahal kita","Aku cinta kamu","मैं तुमसे प्यार करता हूँ","Jag älskar dig","Jeg elsker deg","Miluji tě","Seni sevirəm","Ég elska þig","Mi amas vin"];
-function pop(x,y){var s=document.createElement("div");s.className="pop";s.textContent=L[Math.random()*L.length|0];s.style.left=Math.min(Math.max(x,80),innerWidth-80)+"px";s.style.top=y+"px";s.style.fontSize=(16+Math.random()*22)+"px";s.style.setProperty("--r",(Math.random()*30-15)+"deg");document.body.appendChild(s);setTimeout(function(){s.remove()},3100)}
-function rnd(){pop(Math.random()*innerWidth,Math.random()*innerHeight*.9+30)}
-setInterval(rnd,380);for(var i=0;i<12;i++)setTimeout(rnd,i*90);
+  <main>
 
-var cv=document.getElementById("c"),cx=cv.getContext("2d"),P=[],C=["#ff2d78","#ff6b9d","#ffa3c2","#ffffff","#ff4d4d","#ffb3d1"];
-function fit(){cv.width=innerWidth;cv.height=innerHeight}fit();addEventListener("resize",fit);
-function add(o){P.push(Object.assign({r:Math.random()*6.28,vr:(Math.random()-.5)*.05,a:1,c:C[Math.random()*C.length|0],g:0,t:Math.random()*6},o))}
-function rise(){add({x:Math.random()*innerWidth,y:innerHeight+30,vx:0,vy:-(.6+Math.random()*1.4),s:6+Math.random()*16,sw:1,d:.0008})}
-function burst(x,y,n){for(var i=0;i<n;i++){var an=Math.random()*6.28,sp=2+Math.random()*7;add({x:x,y:y,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp-2,s:5+Math.random()*13,g:.14,d:.012})}}
-setInterval(rise,220);for(var i=0;i<18;i++){rise();P[P.length-1].y=Math.random()*innerHeight}
-function hp(s){cx.beginPath();cx.moveTo(0,s*.35);cx.bezierCurveTo(-s,-s*.3,-s*.6,-s*1.1,0,-s*.5);cx.bezierCurveTo(s*.6,-s*1.1,s,-s*.3,0,s*.35);cx.fill()}
-(function loop(){cx.clearRect(0,0,cv.width,cv.height);
- for(var i=P.length-1;i>=0;i--){var p=P[i];p.t+=.03;p.vy+=p.g;p.x+=p.vx+(p.sw?Math.sin(p.t)*.6:0);p.y+=p.vy;p.vx*=p.g?.99:1;p.r+=p.vr;p.a-=p.d;
-  if(p.a<=0||p.y<-40||p.y>innerHeight+60){P.splice(i,1);continue}
-  cx.save();cx.translate(p.x,p.y);cx.rotate(Math.sin(p.r)*.5);cx.globalAlpha=Math.min(p.a,.85);cx.fillStyle=p.c;cx.shadowColor=p.c;cx.shadowBlur=12;hp(p.s);cx.restore()}
- requestAnimationFrame(loop)})();
+    <!-- ===== HAKKIMDA: paragraflar ===== -->
+    <section id="hakkimda">
+      <h2>Hakkımda</h2>
+      <p>
+        İstanbul'un Küçükçekmece ilçesinde yaşıyordum, üniversite için Isparta'ya geçtim.
+        <strong>İsmet Aktar Mesleki ve Teknik Anadolu Lisesi</strong>nin Yazılım Geliştirme dalından mezun oldum.
+        Özellikle <strong>donanım</strong> ve <strong>veri tabanları</strong> konularında daha bilgiliyim.
+      </p>
+      <p>
+        2026'da <em>Isparta Uygulamalı Bilimler Üniversitesi (ISUBU)</em> Bilgisayar Programcılığı bölümünde okumaya başladım.
+        Bu sayfayı 2025'te Web Tabanlı Uygulama Geliştirme dersinin İlk Dönemi proje olarak hazırlamıştım. Şimdi de üniversitede aldığım
+        <em>Web Tasarımı</em> dersi için güncelliyorum.
+      </p>
+    </section>
 
-addEventListener("pointerdown",function(e){burst(e.clientX,e.clientY,14);for(var i=0;i<3;i++)setTimeout(function(){pop(e.clientX+(Math.random()*160-80),e.clientY+(Math.random()*120-60))},i*80)});
-var lt=0;addEventListener("pointermove",function(e){var n=Date.now();if(n-lt<45)return;lt=n;add({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*1.2,vy:-.8-Math.random(),s:4+Math.random()*7,d:.025})});
-var hr=document.getElementById("hr");addEventListener("pointermove",function(e){var x=(e.clientX/innerWidth-.5)*24,y=(e.clientY/innerHeight-.5)*-24;hr.style.transform="perspective(600px) rotateY("+x+"deg) rotateX("+y+"deg)"});
+    <!-- ===== İLGİ ALANLARI: sırasız liste ===== -->
+    <section id="ilgi">
+      <h2>İlgi Alanlarım</h2>
+      <ul class="ilgi">
+        <li>Yazılım geliştirme</li>
+        <li>Donanım</li>
+        <li>Veri tabanları</li>
+        <li>Web tasarımı</li>
+        <li>Gönüllülük çalışmaları</li>
+        <li>Bilgisayar sistemleri</li>
+      </ul>
+    </section>
 
-var n=document.getElementById("n"),y=document.getElementById("y"),k=0;
-function dodge(e){if(e){e.preventDefault();e.stopPropagation()}
- k++;n.style.position="fixed";n.style.zIndex=9;
- var w=n.offsetWidth,h=n.offsetHeight;
- n.style.left=Math.random()*(innerWidth-w-20)+10+"px";
- n.style.top=Math.random()*(innerHeight-h-40)+20+"px";
- y.style.transform="scale("+Math.min(1+k*.12,2)+")";
- if(k===6)n.textContent="Basamazsın 😏";
- if(k===12)n.textContent="Pes et 😂"}
-["pointerenter","pointerdown","touchstart","click","focus"].forEach(function(t){n.addEventListener(t,dodge,{passive:false})});
-y.onclick=function(){n.style.display="none";var r=y.getBoundingClientRect();
- for(var i=0;i<6;i++)setTimeout(function(){burst(Math.random()*innerWidth,Math.random()*innerHeight*.7,40)},i*220);
- for(var i=0;i<30;i++)setTimeout(rnd,i*45);
- document.getElementById("ans").innerHTML="Biliyordum 😌💖<span class='sg'>— pampin</span>"};
-</script>
+    <!-- ===== EĞİTİM: sıralı liste (eski okuldan yeniye) ===== -->
+    <section id="egitim">
+      <h2>Eğitim Geçmişim</h2>
+      <ol class="egitim">
+        <li>
+          <span class="yil">2015 – 2018</span>
+          <div><h3>Yunus Emre İlkokulu</h3></div>
+        </li>
+        <li>
+          <span class="yil">2019 – 2022</span>
+          <div><h3>Mehmet Akif İnan İmam Hatip Ortaokulu</h3></div>
+        </li>
+        <li>
+          <span class="yil">2022 – 2026</span>
+          <div>
+            <h3>İsmet Aktar Mesleki ve Teknik Anadolu Lisesi</h3>
+            <p>Yazılım Geliştirme dalı. Donanım ve veri tabanları üzerine yoğunlaştım.</p>
+          </div>
+        </li>
+        <li>
+          <span class="yil">2026 – devam</span>
+          <div>
+            <h3>Isparta Uygulamalı Bilimler Üniversitesi</h3>
+            <p>Bilgisayar Programcılığı</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== STAJ VE GÖNÜLLÜLÜK ===== -->
+    <section id="deneyim">
+      <h2>Staj ve Gönüllülük</h2>
+      <p>
+        <strong>Show Mağazacılık</strong> firmasında <em>IT Asistanı</em> olarak staj yaptım.
+        Okulda öğrendiklerimi iş ortamında uygulama fırsatı buldum.
+      </p>
+      <p>
+        Ayrıca <strong>Genç Kızılay</strong> gönüllüsüyüm.
+        Topluma faydalı işlerde yer almayı önemsiyorum.
+      </p>
+    </section>
+
+    <!-- ===== İLETİŞİM: e-posta, LinkedIn ve GitHub ===== -->
+    <section id="iletisim">
+      <h2>İletişim</h2>
+      <ul class="iletisim">
+        <li>
+          <span class="etiket">E-posta</span>
+          <a href="mailto:Yusufislamyilmaz153@gmail.com">Yusufislamyilmaz153@gmail.com</a>
+          <button id="kopyala" type="button">E-postayı kopyala</button>
+        </li>
+        <li>
+          <span class="etiket">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/yusuf-islam-y%C4%B1lmaz-577364397/" target="_blank" rel="noopener noreferrer">linkedin.com/in/yusuf-islam-yılmaz</a>
+          <span></span> <!-- Üç sütunlu düzenin bozulmaması için boş alan -->
+        </li>
+        <li>
+          <span class="etiket">GitHub</span>
+          <a href="https://github.com/yusufsdev" target="_blank" rel="noopener noreferrer">github.com/yusufsdev</a>
+          <span></span> <!-- Üç sütunlu düzenin bozulmaması için boş alan -->
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© <span id="yil">2025</span> Yusuf İslam Yılmaz</p>
+  </footer>
+
+  <button id="yukari" type="button" aria-label="Sayfanın başına dön">↑</button>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ----- Tema: açık/koyu geçişi ve seçimin hatırlanması -----
+    const kok = document.documentElement;
+    const dugme = document.getElementById("tema");
+
+    // Önce cihazın temasına bakılır, daha önce kayıtlı bir seçim varsa o kullanılır
+    let tema = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    try { tema = localStorage.getItem("tema") || tema; } catch (e) {}
+
+    function temaUygula(t) {
+      kok.setAttribute("data-theme", t); // CSS bu özelliğe göre renkleri değiştirir
+      dugme.textContent = t === "dark" ? "Açık tema" : "Koyu tema";
+    }
+    temaUygula(tema);
+
+    dugme.addEventListener("click", function () {
+      tema = kok.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      temaUygula(tema);
+      try { localStorage.setItem("tema", tema); } catch (e) {}
+    });
+
+    // ----- Saate göre selam ve alt bilgideki yıl -----
+    const saat = new Date().getHours();
+    let selam = "Merhaba, ben";
+    if (saat >= 5 && saat < 12) selam = "Günaydın, ben";
+    else if (saat >= 18 || saat < 5) selam = "İyi akşamlar, ben";
+    document.getElementById("selam").textContent = selam;
+    document.getElementById("yil").textContent = new Date().getFullYear();
+
+    // ----- Menü takibi: ekranın ortasındaki bölümün menü bağlantısını vurgular -----
+    const bolumler = document.querySelectorAll("main section");
+    const baglantilar = document.querySelectorAll("nav a");
+    const gozlemci = new IntersectionObserver(function (kayitlar) {
+      kayitlar.forEach(function (kayit) {
+        if (kayit.isIntersecting) {
+          baglantilar.forEach(function (a) {
+            a.classList.toggle("aktif", a.getAttribute("href") === "#" + kayit.target.id);
+          });
+        }
+      });
+    }, { rootMargin: "-40% 0px -50% 0px" }); // Sadece ekranın orta şeridi sayılır
+    bolumler.forEach(function (b) { gozlemci.observe(b); });
+
+    // ----- Yazı makinesi: tanıtım yazısı sırayla yazılıp silinir -----
+    const roller = ["Bilgisayar programcılığı öğrencisi", "Genç Kızılay gönüllüsü", "Donanım ve veri tabanı meraklısı"];
+    const rolYeri = document.getElementById("rol");
+    const azHareket = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let rolNo = 0;      // Şu an hangi cümlede
+    let harfNo = 0;     // Cümlenin kaç harfi görünüyor
+    let siliyor = false;
+
+    function yaz() {
+      const metin = roller[rolNo];
+      harfNo += siliyor ? -1 : 1;
+      rolYeri.textContent = metin.slice(0, harfNo);
+      let bekle = siliyor ? 40 : 80;
+      if (!siliyor && harfNo === metin.length) { siliyor = true; bekle = 1600; } // Cümle bitti, okunsun diye bekle
+      else if (siliyor && harfNo === 0) { siliyor = false; rolNo = (rolNo + 1) % roller.length; bekle = 400; } // Sıradaki cümleye geç
+      setTimeout(yaz, bekle);
+    }
+    if (!azHareket) { rolYeri.textContent = ""; yaz(); }
+
+    // ----- İlerleme çubuğu ve yukarı çık düğmesi -----
+    const cubuk = document.getElementById("ilerleme");
+    const yukari = document.getElementById("yukari");
+
+    function kaydirma() {
+      const toplam = document.documentElement.scrollHeight - window.innerHeight;
+      const oran = toplam > 0 ? window.scrollY / toplam : 0; // 0 ile 1 arası okunan oran
+      cubuk.style.transform = "scaleX(" + oran + ")";
+      yukari.classList.toggle("gorunur", window.scrollY > 400);
+    }
+    window.addEventListener("scroll", kaydirma, { passive: true });
+    kaydirma();
+
+    yukari.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // ----- E-posta adresini panoya kopyalama -----
+    const kopyala = document.getElementById("kopyala");
+    kopyala.addEventListener("click", async function () {
+      try {
+        await navigator.clipboard.writeText("Yusufislamyilmaz153@gmail.com");
+        kopyala.textContent = "Kopyalandı ✓";
+      } catch (e) {
+        kopyala.textContent = "Kopyalanamadı";
+      }
+      setTimeout(function () { kopyala.textContent = "E-postayı kopyala"; }, 2000);
+    });
+  </script>
+
 </body>
 </html>
